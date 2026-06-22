@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/tylermac92/gitops-argocd-lab.git
+    targetRevision: main
+    path: clusters
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd

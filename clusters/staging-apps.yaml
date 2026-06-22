@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: staging-podinfo
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/tylermac92/gitops-argocd-lab.git
+    targetRevision: main
+    path: apps/podinfo/overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
