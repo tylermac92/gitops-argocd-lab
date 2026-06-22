@@ -13,5 +13,8 @@ spec:
     server: https://35.239.172.44
     namespace: production
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
