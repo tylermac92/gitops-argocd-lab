@@ -12,3 +12,6 @@ spec:
   destination:
     server: https://35.239.172.44
     namespace: production
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
